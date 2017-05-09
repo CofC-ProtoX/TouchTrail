@@ -13,7 +13,7 @@ class Circle: UIView {
     
     static var diameter: CGFloat {
         get {
-            return 20
+            return 40
         }
     }
     
@@ -31,14 +31,14 @@ class Circle: UIView {
         let radius = Circle.radius
         self.init(frame: CGRect(x: center.x - radius, y: center.y - radius, width: radius * 2, height: radius * 2))
         self.backgroundColor = UIColor.yellow
-        self.layer.cornerRadius = self.frame.height / 2
+        self.layer.cornerRadius = self.frame.height / 8
         animate()
     }
     
     private func animate() {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-            self.backgroundColor = UIColor.blue
+        UIView.animate(withDuration: 3.0, animations: {
+            self.transform = CGAffineTransform(scaleX: 5, y: 0.5)
+            self.backgroundColor = UIColor.red
         }) { (true) in
             self.removeFromSuperview()
         }
@@ -48,4 +48,3 @@ class Circle: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
